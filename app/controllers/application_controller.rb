@@ -9,7 +9,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    redirect to "/articles"
+    redirect to '/articles'
+  end
+
+  get '/articles' do
+    @articles = Article.all
   end
 
   get '/articles/new' do
